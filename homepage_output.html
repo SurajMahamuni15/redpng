@@ -1,0 +1,858 @@
+﻿<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>RedPNG - High-Quality Transparent PNG Images</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ef4444",
+                        
+                        <!-- Search Bar -->
+                        <form action="http://localhost:8000/search" method="GET" class="hidden lg:flex flex-1 justify-center px-8">
+                            <label class="flex flex-col w-full !h-10 max-w-lg">
+                                <div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+                                    <div class="text-gray-500 dark:text-gray-400 flex border border-gray-200 dark:border-gray-700 bg-background-light dark:bg-background-dark items-center justify-center pl-4 rounded-l-lg border-r-0">
+                                        <span class="material-symbols-outlined text-base">search</span>
+                                    </div>
+                                    <input type="text" name="q" class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-lg text-[#111318] dark:text-gray-200 focus:outline-0 focus:ring-0 border border-gray-200 dark:border-gray-700 bg-background-light dark:bg-background-dark focus:border-primary h-full placeholder:text-gray-500 dark:placeholder:text-gray-400 px-4 text-sm font-normal leading-normal border-l-0" placeholder="Search PNG images..." value=""/>
+                                </div>
+                            </label>
+                        </form>
+
+                        <div class="flex gap-2 items-center">
+                                                            <!-- Not logged in -->
+                                <a href="http://localhost:8000/login" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 border border-gray-200 dark:border-gray-700 text-[#111318] dark:text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                                    <span class="truncate">Login</span>
+                                </a>
+                                <a href="http://localhost:8000/login" class="hidden sm:flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
+                                    <span class="truncate">Sign Up</span>
+                                </a>
+                                                    </div>
+                    </header>
+                    
+                    <main class="mt-8">
+                        <!-- Hero Section -->
+<div class="relative overflow-hidden bg-gradient-to-br from-[#E8304F] via-[#D62C4A] to-[#C42846] py-16 md:py-24">
+    <!-- Decorative blur elements -->
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-black/10 rounded-full blur-3xl"></div>
+    
+    <div class="relative z-10 max-w-4xl mx-auto text-center px-6">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4 drop-shadow-lg">
+            High-Quality Transparent PNG Images
+        </h1>
+        <p class="text-lg md:text-xl text-white/90 mb-8 drop-shadow-md">
+            Discover and download the best transparent PNG images for free.
+        </p>
+        
+        <!-- Search Bar -->
+        <form action="http://localhost:8000/search" method="GET" class="max-w-2xl mx-auto">
+            <div class="flex items-center bg-white rounded-full shadow-2xl overflow-hidden">
+                <div class="pl-6 text-[#E8304F]">
+                    <span class="material-symbols-outlined text-2xl">search</span>
+                </div>
+                <input 
+                    type="text" 
+                    name="q" 
+                    placeholder="Search PNG images..." 
+                    value=""
+                    class="flex-1 px-4 py-4 text-gray-800 placeholder-gray-400 bg-transparent border-0 focus:outline-none focus:ring-0"
+                />
+                <button type="submit" class="bg-gradient-to-r from-[#E8304F] to-[#D62C4A] text-white px-8 py-4 font-bold hover:from-[#D62C4A] hover:to-[#C42846] transition-all">
+                    Search
+                </button>
+            </div>
+        </form>
+        
+        <!-- Trending Tags -->
+        <div class="flex flex-wrap justify-center gap-3 mt-8">
+            <span class="text-white/80 text-sm font-medium">Trending:</span>
+                            <a href="http://localhost:8000/search?q=business" 
+                   class="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white text-sm px-4 py-2 rounded-full transition-all duration-300 border border-white/30 hover:border-white/50">
+                    business
+                </a>
+                            <a href="http://localhost:8000/search?q=food" 
+                   class="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white text-sm px-4 py-2 rounded-full transition-all duration-300 border border-white/30 hover:border-white/50">
+                    food
+                </a>
+                            <a href="http://localhost:8000/search?q=emoji" 
+                   class="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white text-sm px-4 py-2 rounded-full transition-all duration-300 border border-white/30 hover:border-white/50">
+                    emoji
+                </a>
+                            <a href="http://localhost:8000/search?q=abstract" 
+                   class="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white text-sm px-4 py-2 rounded-full transition-all duration-300 border border-white/30 hover:border-white/50">
+                    abstract
+                </a>
+                            <a href="http://localhost:8000/search?q=animals" 
+                   class="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white text-sm px-4 py-2 rounded-full transition-all duration-300 border border-white/30 hover:border-white/50">
+                    animals
+                </a>
+                    </div>
+    </div>
+</div>
+
+<!-- Popular Categories Section -->
+<div class="py-10">
+    <h2 class="text-[#E8304F] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 md:px-6 pb-3">Popular Categories</h2>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-4 md:px-6 pb-10">
+        <a href="http://localhost:8000/search?category=indian-politician" class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden group cursor-pointer shadow-md hover:shadow-xl transition-shadow">
+            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style='background-image: url("https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?w=800&q=80");'></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 p-4">
+                <h3 class="text-white text-lg font-bold mb-1">Indian Politician</h3>
+                <p class="text-white/80 text-sm">1 Images</p>
+            </div>
+        </a>
+        <a href="http://localhost:8000/search?category=marathi-wedding-calligraphy" class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden group cursor-pointer shadow-md hover:shadow-xl transition-shadow">
+            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style='background-image: url("https://images.unsplash.com/photo-1606800052052-a08af7148866?w=800&q=80");'></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 p-4">
+                <h3 class="text-white text-lg font-bold mb-1">Marathi Wedding</h3>
+                <p class="text-white/80 text-sm">0 Images</p>
+            </div>
+        </a>
+        <a href="http://localhost:8000/search?category=hindu-religious-calligraphy" class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden group cursor-pointer shadow-md hover:shadow-xl transition-shadow">
+            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style='background-image: url("https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&q=80");'></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 p-4">
+                <h3 class="text-white text-lg font-bold mb-1">Hindu Religious</h3>
+                <p class="text-white/80 text-sm">0 Images</p>
+            </div>
+        </a>
+        <a href="http://localhost:8000/search?category=historical-warrior" class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden group cursor-pointer shadow-md hover:shadow-xl transition-shadow">
+            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style='background-image: url("https://images.unsplash.com/photo-1533093818801-e9dfe492a7f2?w=800&q=80");'></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 p-4">
+                <h3 class="text-white text-lg font-bold mb-1">Historical / Warrior</h3>
+                <p class="text-white/80 text-sm">0 Images</p>
+            </div>
+        </a>
+        <a href="http://localhost:8000/search?category=events-greeting" class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden group cursor-pointer shadow-md hover:shadow-xl transition-shadow">
+            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style='background-image: url("https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=800&q=80");'></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 p-4">
+                <h3 class="text-white text-lg font-bold mb-1">Events & Greeting</h3>
+                <p class="text-white/80 text-sm">0 Images</p>
+            </div>
+        </a>
+        <a href="http://localhost:8000/search?category=signature-calligraphy-names" class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden group cursor-pointer shadow-md hover:shadow-xl transition-shadow">
+            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style='background-image: url("https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&q=80");'></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 p-4">
+                <h3 class="text-white text-lg font-bold mb-1">Signature & Names</h3>
+                <p class="text-white/80 text-sm">0 Images</p>
+            </div>
+        </a>
+        <a href="http://localhost:8000/search?category=food" class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden group cursor-pointer shadow-md hover:shadow-xl transition-shadow">
+            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style='background-image: url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80");'></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 p-4">
+                <h3 class="text-white text-lg font-bold mb-1">Food / Restaurant</h3>
+                <p class="text-white/80 text-sm">3 Images</p>
+            </div>
+        </a>
+        <a href="http://localhost:8000/search?category=nature" class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden group cursor-pointer shadow-md hover:shadow-xl transition-shadow">
+            <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style='background-image: url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80");'></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 p-4">
+                <h3 class="text-white text-lg font-bold mb-1">Nature</h3>
+                <p class="text-white/80 text-sm">5 Images</p>
+            </div>
+        </a>
+    </div>
+</div>
+
+<!-- Trending Images Section -->
+<div class="py-10 bg-gray-50 dark:bg-gray-900/50">
+    <h2 class="text-[#E8304F] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 md:px-6 pb-3">Trending PNGs (Top Views)</h2>
+    <div class="columns-1 sm:columns-2 lg:columns-3 gap-4 px-4 md:px-6">
+                    <div class="break-inside-avoid mb-6">
+                <div class="relative group cursor-pointer bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-xl transition-all overflow-hidden border border-gray-100 dark:border-gray-700" onclick="window.location.href='http://localhost:8000/png/car-1764168588'">
+                    <!-- Checkerboard for transparency -->
+                    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#000 1px, transparent 1px); background-size: 10px 10px;"></div>
+                    
+                    <img class="relative w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105" 
+                         src="http://localhost:8000/storage/images/thumb_1764168587_car.png" 
+                         alt="car">
+                    
+                    <!-- View count badge -->
+                    <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                        <div class="flex items-center gap-1 bg-black/70 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-full">
+                            <span class="material-symbols-outlined text-sm">visibility</span>
+                            <span>5005</span>
+                        </div>
+                    </div>
+
+                    <!-- Download button -->
+                    <a href="http://localhost:8000/download/23" 
+                       onclick="event.stopPropagation();"
+                       class="absolute bottom-3 right-3 flex items-center justify-center size-9 bg-primary text-white rounded-full opacity-0 group-hover:opacity-100 transition-all shadow-lg hover:scale-110 z-10">
+                        <span class="material-symbols-outlined text-xl">download</span>
+                    </a>
+                    
+                    <!-- Bottom overlay with title -->
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 translate-y-full group-hover:translate-y-0 transition-transform">
+                        <p class="text-white text-sm font-semibold truncate">car</p>
+                        <p class="text-white/80 text-xs">1200×1600</p>
+                    </div>
+                </div>
+            </div>
+                    <div class="break-inside-avoid mb-6">
+                <div class="relative group cursor-pointer bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-xl transition-all overflow-hidden border border-gray-100 dark:border-gray-700" onclick="window.location.href='http://localhost:8000/png/desk-lamp-20'">
+                    <!-- Checkerboard for transparency -->
+                    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#000 1px, transparent 1px); background-size: 10px 10px;"></div>
+                    
+                    <img class="relative w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105" 
+                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPco0t5M9hNMU5KXWLIirdA6E7a1-RbIzkPj5gqOaCzmn_YTHJqeoAtHMHmLmsOSZM6HqqOmZM3teyXaUHVxuCI1mbGuEHj09KJGIS5-TkqEcSTirLgZMhl1kYanr3NDoYc25bJEgdcJs_9vFi0S66dqXktkWTQJgXN7wBdbTCE9Wio0GhZoDMotupXA_gc6wOyxH34MjE9TJcl--8Y1rN715KvkYoJBXjprUPMaBAk-moy2rbCIfWlMQ53Y3NbLn84ZtELRcfIU2-" 
+                         alt="Desk Lamp 20">
+                    
+                    <!-- View count badge -->
+                    <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                        <div class="flex items-center gap-1 bg-black/70 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-full">
+                            <span class="material-symbols-outlined text-sm">visibility</span>
+                            <span>4825</span>
+                        </div>
+                    </div>
+
+                    <!-- Download button -->
+                    <a href="http://localhost:8000/download/20" 
+                       onclick="event.stopPropagation();"
+                       class="absolute bottom-3 right-3 flex items-center justify-center size-9 bg-primary text-white rounded-full opacity-0 group-hover:opacity-100 transition-all shadow-lg hover:scale-110 z-10">
+                        <span class="material-symbols-outlined text-xl">download</span>
+                    </a>
+                    
+                    <!-- Bottom overlay with title -->
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 translate-y-full group-hover:translate-y-0 transition-transform">
+                        <p class="text-white text-sm font-semibold truncate">Desk Lamp 20</p>
+                        <p class="text-white/80 text-xs">1024×1024</p>
+                    </div>
+                </div>
+            </div>
+                    <div class="break-inside-avoid mb-6">
+                <div class="relative group cursor-pointer bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-xl transition-all overflow-hidden border border-gray-100 dark:border-gray-700" onclick="window.location.href='http://localhost:8000/png/google-logo-6'">
+                    <!-- Checkerboard for transparency -->
+                    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#000 1px, transparent 1px); background-size: 10px 10px;"></div>
+                    
+                    <img class="relative w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105" 
+                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuAl2gOCrAUYypmbDxABYWzzGb_lYwncCPaL2ZrzXp96fZl1jElaVEnjSTYsGdaifhOzMRr9spiacFgBtUS2fMaj-NjpZpqZu-hC6QH2It2vdekP9iGuepKvm84tIHYgCUZEyJvEHLmQ4pa8M-NOck1VgmDEkmZ6h2B1fqv3BIV3dSvhll-oshdCxARaMOXkIpe69iYHHUPn9qVv-Rb6l64QrUjFipi75j4j6D7073lj20v4FEDDcyesxnsG0qrkyP63d9Iyf_kP9ToY" 
+                         alt="Google Logo 6">
+                    
+                    <!-- View count badge -->
+                    <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                        <div class="flex items-center gap-1 bg-black/70 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-full">
+                            <span class="material-symbols-outlined text-sm">visibility</span>
+                            <span>4679</span>
+                        </div>
+                    </div>
+
+                    <!-- Download button -->
+                    <a href="http://localhost:8000/download/6" 
+                       onclick="event.stopPropagation();"
+                       class="absolute bottom-3 right-3 flex items-center justify-center size-9 bg-primary text-white rounded-full opacity-0 group-hover:opacity-100 transition-all shadow-lg hover:scale-110 z-10">
+                        <span class="material-symbols-outlined text-xl">download</span>
+                    </a>
+                    
+                    <!-- Bottom overlay with title -->
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 translate-y-full group-hover:translate-y-0 transition-transform">
+                        <p class="text-white text-sm font-semibold truncate">Google Logo 6</p>
+                        <p class="text-white/80 text-xs">1024×1024</p>
+                    </div>
+                </div>
+            </div>
+                    <div class="break-inside-avoid mb-6">
+                <div class="relative group cursor-pointer bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-xl transition-all overflow-hidden border border-gray-100 dark:border-gray-700" onclick="window.location.href='http://localhost:8000/png/pizza-slice-12'">
+                    <!-- Checkerboard for transparency -->
+                    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#000 1px, transparent 1px); background-size: 10px 10px;"></div>
+                    
+                    <img class="relative w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105" 
+                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhPBK3NOWBkeDF9cAmuXsmp1cTA77aLCTNMY8H-GBPVGs0BoDlCk3HQOpUlvlYfVnOl7Xshqn5qgw_6UeI1DoY_ys4z7ZCeWXVwi1CW1k_3C07246TBH9MPLPf44GPOOeky57WZKDKs4a2k5UORQypmmlbenYf00Jz_p2CeTSSc0HtcJ0y0jqhw449kbEzktz_7oHu01SU7P3eDixfbbW6HG1zb3p4PX7IeHUZOvE3nzgCj8G_BBhkyjPo6CY0vIL-Zt1kurn9XXA0" 
+                         alt="Pizza Slice 12">
+                    
+                    <!-- View count badge -->
+                    <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                        <div class="flex items-center gap-1 bg-black/70 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-full">
+                            <span class="material-symbols-outlined text-sm">visibility</span>
+                            <span>4564</span>
+                        </div>
+                    </div>
+
+                    <!-- Download button -->
+                    <a href="http://localhost:8000/download/12" 
+                       onclick="event.stopPropagation();"
+                       class="absolute bottom-3 right-3 flex items-center justify-center size-9 bg-primary text-white rounded-full opacity-0 group-hover:opacity-100 transition-all shadow-lg hover:scale-110 z-10">
+                        <span class="material-symbols-outlined text-xl">download</span>
+                    </a>
+                    
+                    <!-- Bottom overlay with title -->
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 translate-y-full group-hover:translate-y-0 transition-transform">
+                        <p class="text-white text-sm font-semibold truncate">Pizza Slice 12</p>
+                        <p class="text-white/80 text-xs">1024×1024</p>
+                    </div>
+                </div>
+            </div>
+                    <div class="break-inside-avoid mb-6">
+                <div class="relative group cursor-pointer bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-xl transition-all overflow-hidden border border-gray-100 dark:border-gray-700" onclick="window.location.href='http://localhost:8000/png/master-ball-11'">
+                    <!-- Checkerboard for transparency -->
+                    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#000 1px, transparent 1px); background-size: 10px 10px;"></div>
+                    
+                    <img class="relative w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105" 
+                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsnYkHDMohoe0O3fpaTikS-y4pj7cdtoXNzCk4B4iFPSvnH5jG8Q4oP2OSVnpbnLEErx5vthBtjz_VR13nwKTlcVwI_jcXI0qrOltSQOJtGSe-LkVkjqkOFvzoPl5NjTBcc0DHIIr79RL5bZmGwo9GyEX092yDps8b-i0TCB90RWXQKq8Q55B9_HqqTXhB0DUuJzWpBj1meMbUfEyzpZoYK75kYVWSDlC_Bd2Ns4HAAP6-sRRejWzCoPbzhlt6FN59xxEHCuaPpnFL" 
+                         alt="Master Ball 11">
+                    
+                    <!-- View count badge -->
+                    <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                        <div class="flex items-center gap-1 bg-black/70 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-full">
+                            <span class="material-symbols-outlined text-sm">visibility</span>
+                            <span>4497</span>
+                        </div>
+                    </div>
+
+                    <!-- Download button -->
+                    <a href="http://localhost:8000/download/11" 
+                       onclick="event.stopPropagation();"
+                       class="absolute bottom-3 right-3 flex items-center justify-center size-9 bg-primary text-white rounded-full opacity-0 group-hover:opacity-100 transition-all shadow-lg hover:scale-110 z-10">
+                        <span class="material-symbols-outlined text-xl">download</span>
+                    </a>
+                    
+                    <!-- Bottom overlay with title -->
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 translate-y-full group-hover:translate-y-0 transition-transform">
+                        <p class="text-white text-sm font-semibold truncate">Master Ball 11</p>
+                        <p class="text-white/80 text-xs">1024×1024</p>
+                    </div>
+                </div>
+            </div>
+                    <div class="break-inside-avoid mb-6">
+                <div class="relative group cursor-pointer bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-xl transition-all overflow-hidden border border-gray-100 dark:border-gray-700" onclick="window.location.href='http://localhost:8000/png/facebook-logo-19'">
+                    <!-- Checkerboard for transparency -->
+                    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#000 1px, transparent 1px); background-size: 10px 10px;"></div>
+                    
+                    <img class="relative w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105" 
+                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtqpPwBzuy3A0UpDBy4p5-Gl-yxZJchvfyY-ncedE4FzlLffZ9l3xFOfttWzpssUNKqDvj4ZV5DHg7CIUDxACVmu40r2XFin3zhD8zyrJLPaCq771HHAaRMG6dDo7yyRXV1ga1vZKxidNHHqu3r8yBG1nc6zSinQgk7L9zo1nShhIbK9JejxqF38WHRBSTAig3vze3RO60YlmmNLwh6uMxzPDUKXMNRsD_1wMdogd_BmX2X17W3JuMVhb0n2y8Euv5_aPLX3V0MHyD" 
+                         alt="Facebook Logo 19">
+                    
+                    <!-- View count badge -->
+                    <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                        <div class="flex items-center gap-1 bg-black/70 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-full">
+                            <span class="material-symbols-outlined text-sm">visibility</span>
+                            <span>4277</span>
+                        </div>
+                    </div>
+
+                    <!-- Download button -->
+                    <a href="http://localhost:8000/download/19" 
+                       onclick="event.stopPropagation();"
+                       class="absolute bottom-3 right-3 flex items-center justify-center size-9 bg-primary text-white rounded-full opacity-0 group-hover:opacity-100 transition-all shadow-lg hover:scale-110 z-10">
+                        <span class="material-symbols-outlined text-xl">download</span>
+                    </a>
+                    
+                    <!-- Bottom overlay with title -->
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 translate-y-full group-hover:translate-y-0 transition-transform">
+                        <p class="text-white text-sm font-semibold truncate">Facebook Logo 19</p>
+                        <p class="text-white/80 text-xs">1024×1024</p>
+                    </div>
+                </div>
+            </div>
+                    <div class="break-inside-avoid mb-6">
+                <div class="relative group cursor-pointer bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-xl transition-all overflow-hidden border border-gray-100 dark:border-gray-700" onclick="window.location.href='http://localhost:8000/png/laughing-emoji-3'">
+                    <!-- Checkerboard for transparency -->
+                    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#000 1px, transparent 1px); background-size: 10px 10px;"></div>
+                    
+                    <img class="relative w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105" 
+                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuCASfuqNJSJ6eDM0iw2dTmr_XVuBYYX5rG5z3joWlnyLYT6Of_jxPVwwRNlOVtTcGFzUWCBQVVpD3PryUx5GXLGxs3uoL-OMXfWorndHGLBRRmnieVw5ch36A8_lGPxFMtDcVETM3SODjbDsa5hiyfuIDkDA1-Oa1FitIzJMyvO7kSvmPanWBUlFMpMZE6Ft7T1ZT3VMWwSdU1b-pVbRJJjEwPI-cGnOkArhofAYBH_CQkcj0W6L-wUTDdnsm3v7qPNdMFOYfPgUSpn" 
+                         alt="Laughing Emoji 3">
+                    
+                    <!-- View count badge -->
+                    <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                        <div class="flex items-center gap-1 bg-black/70 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-full">
+                            <span class="material-symbols-outlined text-sm">visibility</span>
+                            <span>3257</span>
+                        </div>
+                    </div>
+
+                    <!-- Download button -->
+                    <a href="http://localhost:8000/download/3" 
+                       onclick="event.stopPropagation();"
+                       class="absolute bottom-3 right-3 flex items-center justify-center size-9 bg-primary text-white rounded-full opacity-0 group-hover:opacity-100 transition-all shadow-lg hover:scale-110 z-10">
+                        <span class="material-symbols-outlined text-xl">download</span>
+                    </a>
+                    
+                    <!-- Bottom overlay with title -->
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 translate-y-full group-hover:translate-y-0 transition-transform">
+                        <p class="text-white text-sm font-semibold truncate">Laughing Emoji 3</p>
+                        <p class="text-white/80 text-xs">1024×1024</p>
+                    </div>
+                </div>
+            </div>
+                    <div class="break-inside-avoid mb-6">
+                <div class="relative group cursor-pointer bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-xl transition-all overflow-hidden border border-gray-100 dark:border-gray-700" onclick="window.location.href='http://localhost:8000/png/laughing-emoji-13'">
+                    <!-- Checkerboard for transparency -->
+                    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#000 1px, transparent 1px); background-size: 10px 10px;"></div>
+                    
+                    <img class="relative w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105" 
+                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuCASfuqNJSJ6eDM0iw2dTmr_XVuBYYX5rG5z3joWlnyLYT6Of_jxPVwwRNlOVtTcGFzUWCBQVVpD3PryUx5GXLGxs3uoL-OMXfWorndHGLBRRmnieVw5ch36A8_lGPxFMtDcVETM3SODjbDsa5hiyfuIDkDA1-Oa1FitIzJMyvO7kSvmPanWBUlFMpMZE6Ft7T1ZT3VMWwSdU1b-pVbRJJjEwPI-cGnOkArhofAYBH_CQkcj0W6L-wUTDdnsm3v7qPNdMFOYfPgUSpn" 
+                         alt="Laughing Emoji 13">
+                    
+                    <!-- View count badge -->
+                    <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                        <div class="flex items-center gap-1 bg-black/70 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-full">
+                            <span class="material-symbols-outlined text-sm">visibility</span>
+                            <span>2248</span>
+                        </div>
+                    </div>
+
+                    <!-- Download button -->
+                    <a href="http://localhost:8000/download/13" 
+                       onclick="event.stopPropagation();"
+                       class="absolute bottom-3 right-3 flex items-center justify-center size-9 bg-primary text-white rounded-full opacity-0 group-hover:opacity-100 transition-all shadow-lg hover:scale-110 z-10">
+                        <span class="material-symbols-outlined text-xl">download</span>
+                    </a>
+                    
+                    <!-- Bottom overlay with title -->
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 translate-y-full group-hover:translate-y-0 transition-transform">
+                        <p class="text-white text-sm font-semibold truncate">Laughing Emoji 13</p>
+                        <p class="text-white/80 text-xs">1024×1024</p>
+                    </div>
+                </div>
+            </div>
+                    <div class="break-inside-avoid mb-6">
+                <div class="relative group cursor-pointer bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-xl transition-all overflow-hidden border border-gray-100 dark:border-gray-700" onclick="window.location.href='http://localhost:8000/png/blue-smoke-4'">
+                    <!-- Checkerboard for transparency -->
+                    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#000 1px, transparent 1px); background-size: 10px 10px;"></div>
+                    
+                    <img class="relative w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105" 
+                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuBX20om8h1YnpR0NUg-SnQnftg4rltpCtZQwnJCLksq3uWN2Nedk3VwjtLoq2IgV6GFQUb9P30iJA8uv428ALl9vLrr4XrXZzz_6rcEKc54_eX4QCBsS_muFVSuaGjuftFa4gdW44qQXCEYWMW0iOr83zIOnVcoQ4kintuehCI8551XbVXvvpZbcDcKECbDiYroPD2smFUGLyQ-NAvZH8kJrykZdPAAHkryPf1Yyxpkfi7wWYXelLxd-NwLT4S8e_lzbCSea00_6r5f" 
+                         alt="Blue Smoke 4">
+                    
+                    <!-- View count badge -->
+                    <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                        <div class="flex items-center gap-1 bg-black/70 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-full">
+                            <span class="material-symbols-outlined text-sm">visibility</span>
+                            <span>2077</span>
+                        </div>
+                    </div>
+
+                    <!-- Download button -->
+                    <a href="http://localhost:8000/download/4" 
+                       onclick="event.stopPropagation();"
+                       class="absolute bottom-3 right-3 flex items-center justify-center size-9 bg-primary text-white rounded-full opacity-0 group-hover:opacity-100 transition-all shadow-lg hover:scale-110 z-10">
+                        <span class="material-symbols-outlined text-xl">download</span>
+                    </a>
+                    
+                    <!-- Bottom overlay with title -->
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 translate-y-full group-hover:translate-y-0 transition-transform">
+                        <p class="text-white text-sm font-semibold truncate">Blue Smoke 4</p>
+                        <p class="text-white/80 text-xs">1024×1024</p>
+                    </div>
+                </div>
+            </div>
+                    <div class="break-inside-avoid mb-6">
+                <div class="relative group cursor-pointer bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-xl transition-all overflow-hidden border border-gray-100 dark:border-gray-700" onclick="window.location.href='http://localhost:8000/png/master-ball-1'">
+                    <!-- Checkerboard for transparency -->
+                    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#000 1px, transparent 1px); background-size: 10px 10px;"></div>
+                    
+                    <img class="relative w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105" 
+                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsnYkHDMohoe0O3fpaTikS-y4pj7cdtoXNzCk4B4iFPSvnH5jG8Q4oP2OSVnpbnLEErx5vthBtjz_VR13nwKTlcVwI_jcXI0qrOltSQOJtGSe-LkVkjqkOFvzoPl5NjTBcc0DHIIr79RL5bZmGwo9GyEX092yDps8b-i0TCB90RWXQKq8Q55B9_HqqTXhB0DUuJzWpBj1meMbUfEyzpZoYK75kYVWSDlC_Bd2Ns4HAAP6-sRRejWzCoPbzhlt6FN59xxEHCuaPpnFL" 
+                         alt="Master Ball 1">
+                    
+                    <!-- View count badge -->
+                    <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                        <div class="flex items-center gap-1 bg-black/70 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-full">
+                            <span class="material-symbols-outlined text-sm">visibility</span>
+                            <span>1976</span>
+                        </div>
+                    </div>
+
+                    <!-- Download button -->
+                    <a href="http://localhost:8000/download/1" 
+                       onclick="event.stopPropagation();"
+                       class="absolute bottom-3 right-3 flex items-center justify-center size-9 bg-primary text-white rounded-full opacity-0 group-hover:opacity-100 transition-all shadow-lg hover:scale-110 z-10">
+                        <span class="material-symbols-outlined text-xl">download</span>
+                    </a>
+                    
+                    <!-- Bottom overlay with title -->
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 translate-y-full group-hover:translate-y-0 transition-transform">
+                        <p class="text-white text-sm font-semibold truncate">Master Ball 1</p>
+                        <p class="text-white/80 text-xs">1024×1024</p>
+                    </div>
+                </div>
+            </div>
+                    <div class="break-inside-avoid mb-6">
+                <div class="relative group cursor-pointer bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-xl transition-all overflow-hidden border border-gray-100 dark:border-gray-700" onclick="window.location.href='http://localhost:8000/png/facebook-logo-9'">
+                    <!-- Checkerboard for transparency -->
+                    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#000 1px, transparent 1px); background-size: 10px 10px;"></div>
+                    
+                    <img class="relative w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105" 
+                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtqpPwBzuy3A0UpDBy4p5-Gl-yxZJchvfyY-ncedE4FzlLffZ9l3xFOfttWzpssUNKqDvj4ZV5DHg7CIUDxACVmu40r2XFin3zhD8zyrJLPaCq771HHAaRMG6dDo7yyRXV1ga1vZKxidNHHqu3r8yBG1nc6zSinQgk7L9zo1nShhIbK9JejxqF38WHRBSTAig3vze3RO60YlmmNLwh6uMxzPDUKXMNRsD_1wMdogd_BmX2X17W3JuMVhb0n2y8Euv5_aPLX3V0MHyD" 
+                         alt="Facebook Logo 9">
+                    
+                    <!-- View count badge -->
+                    <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                        <div class="flex items-center gap-1 bg-black/70 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-full">
+                            <span class="material-symbols-outlined text-sm">visibility</span>
+                            <span>1780</span>
+                        </div>
+                    </div>
+
+                    <!-- Download button -->
+                    <a href="http://localhost:8000/download/9" 
+                       onclick="event.stopPropagation();"
+                       class="absolute bottom-3 right-3 flex items-center justify-center size-9 bg-primary text-white rounded-full opacity-0 group-hover:opacity-100 transition-all shadow-lg hover:scale-110 z-10">
+                        <span class="material-symbols-outlined text-xl">download</span>
+                    </a>
+                    
+                    <!-- Bottom overlay with title -->
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 translate-y-full group-hover:translate-y-0 transition-transform">
+                        <p class="text-white text-sm font-semibold truncate">Facebook Logo 9</p>
+                        <p class="text-white/80 text-xs">1024×1024</p>
+                    </div>
+                </div>
+            </div>
+                    <div class="break-inside-avoid mb-6">
+                <div class="relative group cursor-pointer bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-xl transition-all overflow-hidden border border-gray-100 dark:border-gray-700" onclick="window.location.href='http://localhost:8000/png/google-logo-16'">
+                    <!-- Checkerboard for transparency -->
+                    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#000 1px, transparent 1px); background-size: 10px 10px;"></div>
+                    
+                    <img class="relative w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105" 
+                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuAl2gOCrAUYypmbDxABYWzzGb_lYwncCPaL2ZrzXp96fZl1jElaVEnjSTYsGdaifhOzMRr9spiacFgBtUS2fMaj-NjpZpqZu-hC6QH2It2vdekP9iGuepKvm84tIHYgCUZEyJvEHLmQ4pa8M-NOck1VgmDEkmZ6h2B1fqv3BIV3dSvhll-oshdCxARaMOXkIpe69iYHHUPn9qVv-Rb6l64QrUjFipi75j4j6D7073lj20v4FEDDcyesxnsG0qrkyP63d9Iyf_kP9ToY" 
+                         alt="Google Logo 16">
+                    
+                    <!-- View count badge -->
+                    <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                        <div class="flex items-center gap-1 bg-black/70 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-full">
+                            <span class="material-symbols-outlined text-sm">visibility</span>
+                            <span>1759</span>
+                        </div>
+                    </div>
+
+                    <!-- Download button -->
+                    <a href="http://localhost:8000/download/16" 
+                       onclick="event.stopPropagation();"
+                       class="absolute bottom-3 right-3 flex items-center justify-center size-9 bg-primary text-white rounded-full opacity-0 group-hover:opacity-100 transition-all shadow-lg hover:scale-110 z-10">
+                        <span class="material-symbols-outlined text-xl">download</span>
+                    </a>
+                    
+                    <!-- Bottom overlay with title -->
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 translate-y-full group-hover:translate-y-0 transition-transform">
+                        <p class="text-white text-sm font-semibold truncate">Google Logo 16</p>
+                        <p class="text-white/80 text-xs">1024×1024</p>
+                    </div>
+                </div>
+            </div>
+                    <div class="break-inside-avoid mb-6">
+                <div class="relative group cursor-pointer bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-xl transition-all overflow-hidden border border-gray-100 dark:border-gray-700" onclick="window.location.href='http://localhost:8000/png/red-apple-8'">
+                    <!-- Checkerboard for transparency -->
+                    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#000 1px, transparent 1px); background-size: 10px 10px;"></div>
+                    
+                    <img class="relative w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105" 
+                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoroafZmPMoJkbagPzCkiysW-PykWxJZNpHfMgKuVEgetT-BOkhPYiZJK1rJMzyGQPAt_fcKAmFiFRmLulrdyYbp2IKpu1ofO6SFUG6O7htzOwjlanoHfe-SUpuDr8wHct25K0mR5a0uxC3KWeWKejF4k7gtZniPGtF8OnrlW86mSCj8Gk5M5R_EaInVstx-He-XLX-enCFf02tz3EkGuJOkzfo5otxGMHXyKNzj4ZMTqtGmOTu-bDwyQI0FgAMK4IaNWlCcv2-gYc" 
+                         alt="Red Apple 8">
+                    
+                    <!-- View count badge -->
+                    <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                        <div class="flex items-center gap-1 bg-black/70 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-full">
+                            <span class="material-symbols-outlined text-sm">visibility</span>
+                            <span>1664</span>
+                        </div>
+                    </div>
+
+                    <!-- Download button -->
+                    <a href="http://localhost:8000/download/8" 
+                       onclick="event.stopPropagation();"
+                       class="absolute bottom-3 right-3 flex items-center justify-center size-9 bg-primary text-white rounded-full opacity-0 group-hover:opacity-100 transition-all shadow-lg hover:scale-110 z-10">
+                        <span class="material-symbols-outlined text-xl">download</span>
+                    </a>
+                    
+                    <!-- Bottom overlay with title -->
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 translate-y-full group-hover:translate-y-0 transition-transform">
+                        <p class="text-white text-sm font-semibold truncate">Red Apple 8</p>
+                        <p class="text-white/80 text-xs">1024×1024</p>
+                    </div>
+                </div>
+            </div>
+                    <div class="break-inside-avoid mb-6">
+                <div class="relative group cursor-pointer bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-xl transition-all overflow-hidden border border-gray-100 dark:border-gray-700" onclick="window.location.href='http://localhost:8000/png/cartoon-cat-15'">
+                    <!-- Checkerboard for transparency -->
+                    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#000 1px, transparent 1px); background-size: 10px 10px;"></div>
+                    
+                    <img class="relative w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105" 
+                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAKwcMyWSdV0hQ_UMO3pTv3eEew7s98BIaqUNQctKcyKYMmqjGYRnc3j01pdkVeYxU_xZk0--D_qiIeiBmBBXLxbKZU5Xix-4P9tWA68P6nsVTGlKs4MP5EL-EX_Sq0_pGP7H2sKOZWUrLIXNHNfK2Fysnno4GVYbcY4SKPcR0FiJS3n-vKmfobrQfIxcLf7sA5DIKKf4Vq2F5-ur6s7OywW82vWDfvEMfPT-q0Q2F6rWeUTAAquwUkveoI1pKGqnNpN1v_LKxarve" 
+                         alt="Cartoon Cat 15">
+                    
+                    <!-- View count badge -->
+                    <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                        <div class="flex items-center gap-1 bg-black/70 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-full">
+                            <span class="material-symbols-outlined text-sm">visibility</span>
+                            <span>1511</span>
+                        </div>
+                    </div>
+
+                    <!-- Download button -->
+                    <a href="http://localhost:8000/download/15" 
+                       onclick="event.stopPropagation();"
+                       class="absolute bottom-3 right-3 flex items-center justify-center size-9 bg-primary text-white rounded-full opacity-0 group-hover:opacity-100 transition-all shadow-lg hover:scale-110 z-10">
+                        <span class="material-symbols-outlined text-xl">download</span>
+                    </a>
+                    
+                    <!-- Bottom overlay with title -->
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 translate-y-full group-hover:translate-y-0 transition-transform">
+                        <p class="text-white text-sm font-semibold truncate">Cartoon Cat 15</p>
+                        <p class="text-white/80 text-xs">1024×1024</p>
+                    </div>
+                </div>
+            </div>
+                    <div class="break-inside-avoid mb-6">
+                <div class="relative group cursor-pointer bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-xl transition-all overflow-hidden border border-gray-100 dark:border-gray-700" onclick="window.location.href='http://localhost:8000/png/pizza-slice-2'">
+                    <!-- Checkerboard for transparency -->
+                    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#000 1px, transparent 1px); background-size: 10px 10px;"></div>
+                    
+                    <img class="relative w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105" 
+                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhPBK3NOWBkeDF9cAmuXsmp1cTA77aLCTNMY8H-GBPVGs0BoDlCk3HQOpUlvlYfVnOl7Xshqn5qgw_6UeI1DoY_ys4z7ZCeWXVwi1CW1k_3C07246TBH9MPLPf44GPOOeky57WZKDKs4a2k5UORQypmmlbenYf00Jz_p2CeTSSc0HtcJ0y0jqhw449kbEzktz_7oHu01SU7P3eDixfbbW6HG1zb3p4PX7IeHUZOvE3nzgCj8G_BBhkyjPo6CY0vIL-Zt1kurn9XXA0" 
+                         alt="Pizza Slice 2">
+                    
+                    <!-- View count badge -->
+                    <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                        <div class="flex items-center gap-1 bg-black/70 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-full">
+                            <span class="material-symbols-outlined text-sm">visibility</span>
+                            <span>1322</span>
+                        </div>
+                    </div>
+
+                    <!-- Download button -->
+                    <a href="http://localhost:8000/download/2" 
+                       onclick="event.stopPropagation();"
+                       class="absolute bottom-3 right-3 flex items-center justify-center size-9 bg-primary text-white rounded-full opacity-0 group-hover:opacity-100 transition-all shadow-lg hover:scale-110 z-10">
+                        <span class="material-symbols-outlined text-xl">download</span>
+                    </a>
+                    
+                    <!-- Bottom overlay with title -->
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 translate-y-full group-hover:translate-y-0 transition-transform">
+                        <p class="text-white text-sm font-semibold truncate">Pizza Slice 2</p>
+                        <p class="text-white/80 text-xs">1024×1024</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+</div>
+                    </main>
+
+                    <footer class="mt-16 border-t border-gray-200 dark:border-gray-700 py-8 px-4">
+                        <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                            <p class="text-sm text-gray-500 dark:text-gray-400">© 2024 PNG World. All rights reserved.</p>
+                            <div class="flex items-center gap-6 text-sm">
+                                <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">About</a>
+                                <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">License</a>
+                                <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">Contact</a>
+                                <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">Privacy Policy</a>
+                                <a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">Terms</a>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Upload Modal -->
+    <div id="uploadModal" class="hidden fixed inset-0 bg-black/50 z-[100] flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-6 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between">
+                <h2 class="text-2xl font-bold text-[#111318] dark:text-white">Upload PNG Image</h2>
+                <button onclick="closeUploadModal()" class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
+                    <span class="material-symbols-outlined text-3xl">close</span>
+                </button>
+            </div>
+            
+            <form id="uploadForm" method="POST" action="http://localhost:8000/upload" enctype="multipart/form-data" class="p-6">
+                <input type="hidden" name="_token" value="y93tlevTdoJzZrPnGzF1B20saYVzd5wCkDZrj5Wi" autocomplete="off">                
+                <div id="uploadMessage" class="hidden mb-4 p-4 rounded-lg"></div>
+                
+                <div class="space-y-5">
+                    <!-- Title -->
+                    <div>
+                        <label class="block text-sm font-bold text-[#111318] dark:text-white mb-2">Title *</label>
+                        <input type="text" name="title" required class="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-background-light dark:bg-gray-900 text-[#111318] dark:text-white focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Enter image title">
+                        <span class="text-red-500 text-sm error-message" id="title-error"></span>
+                    </div>
+
+                    <!-- Image File -->
+                    <div>
+                        <label class="block text-sm font-bold text-[#111318] dark:text-white mb-2">Image File (PNG only, max 5MB) *</label>
+                        <input type="file" name="image" accept=".png" required class="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-background-light dark:bg-gray-900 text-[#111318] dark:text-white focus:outline-none focus:ring-2 focus:ring-primary">
+                        <span class="text-red-500 text-sm error-message" id="image-error"></span>
+                    </div>
+
+                    <!-- Category -->
+                    <div>
+                        <label class="block text-sm font-bold text-[#111318] dark:text-white mb-2">Category *</label>
+                        <select name="category_id" required class="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-background-light dark:bg-gray-900 text-[#111318] dark:text-white focus:outline-none focus:ring-2 focus:ring-primary">
+                            <option value="">Select a category</option>
+                                                            <option value="1">Business</option>
+                                                            <option value="2">Food</option>
+                                                            <option value="3">Icons</option>
+                                                            <option value="4">Technology</option>
+                                                            <option value="5">Nature</option>
+                                                            <option value="6">Abstract</option>
+                                                            <option value="7">Indian Politician</option>
+                                                            <option value="8">Marathi Wedding Calligraphy</option>
+                                                            <option value="9">Hindu Religious Calligraphy</option>
+                                                            <option value="10">Historical / Warrior</option>
+                                                            <option value="11">Events &amp; Greeting</option>
+                                                            <option value="12">Signature &amp; Calligraphy Names</option>
+                                                            <option value="13">Food / Restaurant</option>
+                                                    </select>
+                        <span class="text-red-500 text-sm error-message" id="category_id-error"></span>
+                    </div>
+
+                    <!-- License -->
+                    <div>
+                        <label class="block text-sm font-bold text-[#111318] dark:text-white mb-2">License *</label>
+                        <select name="license_id" required class="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-background-light dark:bg-gray-900 text-[#111318] dark:text-white focus:outline-none focus:ring-2 focus:ring-primary">
+                            <option value="">Select a license</option>
+                                                            <option value="1">Personal Use</option>
+                                                            <option value="2">Commercial Use</option>
+                                                    </select>
+                        <span class="text-red-500 text-sm error-message" id="license_id-error"></span>
+                    </div>
+
+                    <!-- Background Type -->
+                    <div>
+                        <label class="block text-sm font-bold text-[#111318] dark:text-white mb-2">Background Type *</label>
+                        <select name="background_type" required class="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-background-light dark:bg-gray-900 text-[#111318] dark:text-white focus:outline-none focus:ring-2 focus:ring-primary">
+                            <option value="">Select background type</option>
+                            <option value="transparent">Transparent</option>
+                            <option value="colored">Colored</option>
+                        </select>
+                        <span class="text-red-500 text-sm error-message" id="background_type-error"></span>
+                    </div>
+
+                    <!-- Tags -->
+                    <div>
+                        <label class="block text-sm font-bold text-[#111318] dark:text-white mb-2">Tags (comma-separated)</label>
+                        <input type="text" name="tags" class="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-background-light dark:bg-gray-900 text-[#111318] dark:text-white focus:outline-none focus:ring-2 focus:ring-primary" placeholder="e.g. business, icon, logo">
+                        <span class="text-red-500 text-sm error-message" id="tags-error"></span>
+                    </div>
+                </div>
+
+                <div class="flex gap-3 mt-6">
+                    <button type="button" onclick="closeUploadModal()" class="flex-1 h-12 bg-gray-200 dark:bg-gray-700 text-[#111318] dark:text-white rounded-lg font-bold hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
+                        Cancel
+                    </button>
+                    <button type="submit" id="uploadBtn" class="flex-1 h-12 bg-primary text-white rounded-lg font-bold hover:bg-primary/90 transition-colors">
+                        Upload Image
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openUploadModal() {
+            document.getElementById('uploadModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeUploadModal() {
+            document.getElementById('uploadModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+            document.getElementById('uploadForm').reset();
+            document.getElementById('uploadMessage').classList.add('hidden');
+            document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
+        }
+
+        document.getElementById('uploadForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const form = e.target;
+            const formData = new FormData(form);
+            const uploadBtn = document.getElementById('uploadBtn');
+            const messageDiv = document.getElementById('uploadMessage');
+            
+            // Clear previous errors
+            document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
+            messageDiv.classList.add('hidden');
+            
+            // Disable button
+            uploadBtn.disabled = true;
+            uploadBtn.textContent = 'Uploading...';
+            
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest'
+                    }
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    messageDiv.className = 'mb-4 p-4 rounded-lg bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200';
+                    messageDiv.textContent = data.message;
+                    messageDiv.classList.remove('hidden');
+                    form.reset();
+                    
+                    setTimeout(() => {
+                        closeUploadModal();
+                    }, 3000);
+                } else {
+                    if (data.errors) {
+                        Object.keys(data.errors).forEach(key => {
+                            const errorEl = document.getElementById(key + '-error');
+                            if (errorEl) {
+                                errorEl.textContent = data.errors[key][0];
+                            }
+                        });
+                    }
+                    messageDiv.className = 'mb-4 p-4 rounded-lg bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200';
+                    messageDiv.textContent = data.message || 'Upload failed. Please check the form.';
+                    messageDiv.classList.remove('hidden');
+                }
+            } catch (error) {
+                messageDiv.className = 'mb-4 p-4 rounded-lg bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200';
+                messageDiv.textContent = 'An error occurred. Please try again.';
+                messageDiv.classList.remove('hidden');
+            } finally {
+                uploadBtn.disabled = false;
+                uploadBtn.textContent = 'Upload Image';
+            }
+        });
+    </script>
+
+    <script>
+        // Dropdown toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdownTrigger = document.querySelector('.dropdown-trigger');
+            const dropdownMenu = document.querySelector('.dropdown-menu');
+            
+            if (dropdownTrigger && dropdownMenu) {
+                dropdownTrigger.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    dropdownMenu.classList.toggle('hidden');
+                });
+
+                // Close dropdown when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!dropdownMenu.contains(e.target) && !dropdownTrigger.contains(e.target)) {
+                        dropdownMenu.classList.add('hidden');
+                    }
+                });
+            }
+        });
+    </script>
+    
+    <!-- Autocomplete Search -->
+    <script src="http://localhost:8000/js/autocomplete.js"></script>
+</body>
+</html>
+

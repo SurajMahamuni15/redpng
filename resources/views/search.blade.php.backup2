@@ -1,0 +1,203 @@
+@extends('layouts.app')
+
+@section('title', 'Search Results - RedPNG')
+
+@section('content')
+<div class="px-4 sm:px-8 md:px-12 lg:px-20 xl:px-40 flex flex-1 justify-center py-5">
+    <div class="layout-content-container flex flex-col max-w-[1200px] flex-1">
+        
+        <!-- Header -->
+        <div class="flex flex-col gap-2 mb-8">
+            <h1 class="text-[#111318] dark:text-white text-3xl font-bold leading-tight">
+                @if(request('q'))
+                    Results for: <span class="text-primary">{{ request('q') }}</span>
+                @else
+                    All Images
+                @endif
+            </h1>
+            <p class="text-gray-500 dark:text-gray-400 text-sm">{{ $images->total() }} results found</p>
+        </div>
+
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Sidebar Filters -->
+            <aside class="w-full lg:w-64 flex-shrink-0">
+                <form action="{{ route('search') }}" method="GET" id="filter-form" class="flex flex-col gap-6">
+                    @if(request('q'))
+                        <input type="hidden" name="q" value="{{ request('q') }}">
+                    @endif
+
+                    <!-- Category -->
+                    <div class="flex flex-col gap-3">
+                        <h3 class="text-[#111318] dark:text-white font-bold text-base">Category</h3>
+                        <div class="flex flex-col gap-2">
+                            @foreach($categories as $category)
+                                <label class="flex items-center gap-2 cursor-pointer group">
+                                    <input type="radio" name="category" value="{{ $category->slug }}" class="form-radio text-primary border-gray-300 focus:ring-primary" {{ request('category') == $category->slug ? 'checked' : '' }} onchange="this.form.submit()">
+                                    <span class="text-gray-600 dark:text-gray-300 text-sm group-hover:text-primary transition-colors">{{ $category->name }}</span>
+                                </label>
+                            @endforeach
+                        </div>
+                    </div>
+
+                    <!-- Sort -->
+                    <div class="flex flex-col gap-3">
+                        <h3 class="text-[#111318] dark:text-white font-bold text-base">Sort By</h3>
+                        <select name="sort" class="form-select rounded-lg border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-sm focus:border-primary focus:ring-primary" onchange="this.form.submit()">
+                            <option value="relevance" {{ request('sort') == 'relevance' ? 'selected' : '' }}>Relevance</option>
+                            <option value="latest" {{ request('sort') == 'latest' ? 'selected' : '' }}>Latest</option>
+                            <option value="downloads" {{ request('sort') == 'downloads' ? 'selected' : '' }}>Most Downloaded</option>
+                        </select>
+                    </div>
+
+                    <a href="{{ route('search') }}" class="text-sm text-gray-500 hover:text-primary underline">Clear Filters</a>
+                </form>
+            </aside>
+
+            <!-- Main Grid -->
+            <div class="flex-1">
+                <div class="columns-1 sm:columns-2 lg:columns-3 gap-4 px-4">
+                    @forelse($images as $image)
+                        <div class="break-inside-avoid mb-6">
+                            <div class="relative group cursor-pointer bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-xl transition-all overflow-hidden border border-gray-100 dark:border-gray-700" onclick="window.location.href='{{ route('image.show', $image->slug) }}'">
+                                <!-- Checkerboard for transparency -->
+                                <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#000 1px, transparent 1px); background-size: 10px 10px;"></div>
+                                
+                                <img class="relative w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105" 
+                                     src="{{ asset($image->thumbnail_path) }}" 
+                                     alt="{{ $image->title }}">
+                                
+                                <!-- Favorite button -->
+                                <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                                    <button class="flex items-center justify-center size-8 bg-white/90 backdrop-blur-sm text-gray-700 rounded-full shadow-sm hover:text-red-500 transition-colors">
+                                        <span class="material-symbols-outlined text-lg">favorite</span>
+                                    </button>
+                                </div>
+
+                                <!-- Download button -->
+                                <a href="{{ route('image.download', $image) }}" 
+                                   onclick="event.stopPropagation();"
+                                   class="absolute bottom-3 right-3 flex items-center justify-center size-9 bg-primary text-white rounded-full opacity-0 group-hover:opacity-100 transition-all shadow-lg hover:scale-110 z-10">
+                                    <span class="material-symbols-outlined text-xl">download</span>
+                                </a>
+                                
+                                <!-- Bottom overlay with info -->
+                                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 translate-y-full group-hover:translate-y-0 transition-transform">
+                                    <p class="text-white text-sm font-semibold truncate">{{ $image->title }}</p>
+                                    <div class="flex items-center gap-2 text-xs text-white/80">
+                                        <span>{{ $image->width }}×{{ $image->height }}</span>
+                                        <span>•</span>
+@extends('layouts.app')
+
+@section('title', 'Search Results - RedPNG')
+
+@section('content')
+<div class="px-4 sm:px-8 md:px-12 lg:px-20 xl:px-40 flex flex-1 justify-center py-5">
+    <div class="layout-content-container flex flex-col max-w-[1200px] flex-1">
+        
+        <!-- Header -->
+        <div class="flex flex-col gap-2 mb-8">
+            <h1 class="text-[#111318] dark:text-white text-3xl font-bold leading-tight">
+                @if(request('q'))
+                    Results for: <span class="text-primary">{{ request('q') }}</span>
+                @else
+                    All Images
+                @endif
+            </h1>
+            <p class="text-gray-500 dark:text-gray-400 text-sm">{{ $images->total() }} results found</p>
+        </div>
+
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Sidebar Filters -->
+            <aside class="w-full lg:w-64 flex-shrink-0">
+                <form action="{{ route('search') }}" method="GET" id="filter-form" class="flex flex-col gap-6">
+                    @if(request('q'))
+                        <input type="hidden" name="q" value="{{ request('q') }}">
+                    @endif
+
+                    <!-- Category -->
+                    <div class="flex flex-col gap-3">
+                        <h3 class="text-[#111318] dark:text-white font-bold text-base">Category</h3>
+                        <div class="flex flex-col gap-2">
+                            @foreach($categories as $category)
+                                <label class="flex items-center gap-2 cursor-pointer group">
+                                    <input type="radio" name="category" value="{{ $category->slug }}" class="form-radio text-primary border-gray-300 focus:ring-primary" {{ request('category') == $category->slug ? 'checked' : '' }} onchange="this.form.submit()">
+                                    <span class="text-gray-600 dark:text-gray-300 text-sm group-hover:text-primary transition-colors">{{ $category->name }}</span>
+                                </label>
+                            @endforeach
+                        </div>
+                    </div>
+
+                    <!-- Sort -->
+                    <div class="flex flex-col gap-3">
+                        <h3 class="text-[#111318] dark:text-white font-bold text-base">Sort By</h3>
+                        <select name="sort" class="form-select rounded-lg border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-sm focus:border-primary focus:ring-primary" onchange="this.form.submit()">
+                            <option value="relevance" {{ request('sort') == 'relevance' ? 'selected' : '' }}>Relevance</option>
+                            <option value="latest" {{ request('sort') == 'latest' ? 'selected' : '' }}>Latest</option>
+                            <option value="downloads" {{ request('sort') == 'downloads' ? 'selected' : '' }}>Most Downloaded</option>
+                        </select>
+                    </div>
+
+                    <a href="{{ route('search') }}" class="text-sm text-gray-500 hover:text-primary underline">Clear Filters</a>
+                </form>
+            </aside>
+
+            <!-- Main Grid -->
+            <div class="flex-1">
+                <div class="columns-1 sm:columns-2 lg:columns-3 gap-4 px-4">
+                    @forelse($images as $image)
+                        <div class="break-inside-avoid mb-6">
+                            <div class="relative group cursor-pointer bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-xl transition-all overflow-hidden border border-gray-100 dark:border-gray-700" onclick="window.location.href='{{ route('image.show', $image->slug) }}'">
+                                <!-- Checkerboard for transparency -->
+                                <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#000 1px, transparent 1px); background-size: 10px 10px;"></div>
+                                
+                                <img class="relative w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105" 
+                                     src="{{ asset($image->thumbnail_path) }}" 
+                                     alt="{{ $image->title }}">
+                                
+                                <!-- Favorite button -->
+                                <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                                    <button class="flex items-center justify-center size-8 bg-white/90 backdrop-blur-sm text-gray-700 rounded-full shadow-sm hover:text-red-500 transition-colors">
+                                        <span class="material-symbols-outlined text-lg">favorite</span>
+                                    </button>
+                                </div>
+
+                                <!-- Download button -->
+                                <a href="{{ route('image.download', $image) }}" 
+                                   onclick="event.stopPropagation();"
+                                   class="absolute bottom-3 right-3 flex items-center justify-center size-9 bg-primary text-white rounded-full opacity-0 group-hover:opacity-100 transition-all shadow-lg hover:scale-110 z-10">
+                                    <span class="material-symbols-outlined text-xl">download</span>
+                                </a>
+                                
+                                <!-- Bottom overlay with info -->
+                                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4 translate-y-full group-hover:translate-y-0 transition-transform">
+                                    <p class="text-white text-sm font-semibold truncate">{{ $image->title }}</p>
+                                    <div class="flex items-center gap-2 text-xs text-white/80">
+                                        <span>{{ $image->width }}×{{ $image->height }}</span>
+                                        <span>•</span>
+                                        <span>{{ round($image->file_size_bytes / 1024) }} KB</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @empty
+                        <div class="col-span-full flex flex-col items-center justify-center py-16 text-center">
+                            <div class="size-20 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center mb-4">
+                                <span class="material-symbols-outlined text-4xl text-gray-400">image_not_supported</span>
+                            </div>
+                            <h3 class="text-[#111318] dark:text-white text-xl font-bold mb-2">No results found</h3>
+                            <p class="text-gray-500 dark:text-gray-400 text-sm">Try adjusting your search or filters.</p>
+                        </div>
+                    @endforelse
+                </div>
+
+                <!-- Pagination -->
+                @if($images->hasPages())
+                    <div class="mt-8">
+                        {{ $images->links() }}
+                    </div>
+                @endif
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
